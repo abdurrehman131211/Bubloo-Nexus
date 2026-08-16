@@ -54,6 +54,7 @@ export function ActionLink({
   className?: string;
   children: ReactNode;
   params?: Record<string, string>;
+  onClick?: () => void;
 } & Variants) {
   const cls = cn(actionVariants({ variant, size }), className);
   const isExternal = external ?? (href ? /^https?:/.test(href) : false);
