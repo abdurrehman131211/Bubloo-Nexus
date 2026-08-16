@@ -10,33 +10,180 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AboutRouteImport } from './routes/about'
+import { Route as ChatbotRouteImport } from './routes/chatbot'
+import { Route as ContactRouteImport } from './routes/contact'
+import { Route as CreativeRouteImport } from './routes/creative'
+import { Route as ExploreRouteImport } from './routes/explore'
+import { Route as ProjectsRouteImport } from './routes/projects'
+import { Route as TeamRouteImport } from './routes/team'
+import { Route as BlogsIndexRouteImport } from './routes/blogs.index'
+import { Route as BlogsSlugRouteImport } from './routes/blogs.$slug'
+import { Route as LearnIndexRouteImport } from './routes/learn.index'
+import { Route as LearnSubjectRouteImport } from './routes/learn.$subject'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AboutRoute = AboutRouteImport.update({
+  id: '/about',
+  path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ChatbotRoute = ChatbotRouteImport.update({
+  id: '/chatbot',
+  path: '/chatbot',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CreativeRoute = CreativeRouteImport.update({
+  id: '/creative',
+  path: '/creative',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ExploreRoute = ExploreRouteImport.update({
+  id: '/explore',
+  path: '/explore',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProjectsRoute = ProjectsRouteImport.update({
+  id: '/projects',
+  path: '/projects',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TeamRoute = TeamRouteImport.update({
+  id: '/team',
+  path: '/team',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BlogsIndexRoute = BlogsIndexRouteImport.update({
+  id: '/blogs/',
+  path: '/blogs/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BlogsSlugRoute = BlogsSlugRouteImport.update({
+  id: '/blogs/$slug',
+  path: '/blogs/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LearnIndexRoute = LearnIndexRouteImport.update({
+  id: '/learn/',
+  path: '/learn/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LearnSubjectRoute = LearnSubjectRouteImport.update({
+  id: '/learn/$subject',
+  path: '/learn/$subject',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/chatbot': typeof ChatbotRoute
+  '/contact': typeof ContactRoute
+  '/creative': typeof CreativeRoute
+  '/explore': typeof ExploreRoute
+  '/projects': typeof ProjectsRoute
+  '/team': typeof TeamRoute
+  '/blogs/$slug': typeof BlogsSlugRoute
+  '/learn/$subject': typeof LearnSubjectRoute
+  '/blogs/': typeof BlogsIndexRoute
+  '/learn/': typeof LearnIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/chatbot': typeof ChatbotRoute
+  '/contact': typeof ContactRoute
+  '/creative': typeof CreativeRoute
+  '/explore': typeof ExploreRoute
+  '/projects': typeof ProjectsRoute
+  '/team': typeof TeamRoute
+  '/blogs/$slug': typeof BlogsSlugRoute
+  '/learn/$subject': typeof LearnSubjectRoute
+  '/blogs': typeof BlogsIndexRoute
+  '/learn': typeof LearnIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/chatbot': typeof ChatbotRoute
+  '/contact': typeof ContactRoute
+  '/creative': typeof CreativeRoute
+  '/explore': typeof ExploreRoute
+  '/projects': typeof ProjectsRoute
+  '/team': typeof TeamRoute
+  '/blogs/$slug': typeof BlogsSlugRoute
+  '/learn/$subject': typeof LearnSubjectRoute
+  '/blogs/': typeof BlogsIndexRoute
+  '/learn/': typeof LearnIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/about'
+    | '/chatbot'
+    | '/contact'
+    | '/creative'
+    | '/explore'
+    | '/projects'
+    | '/team'
+    | '/blogs/$slug'
+    | '/learn/$subject'
+    | '/blogs/'
+    | '/learn/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/about'
+    | '/chatbot'
+    | '/contact'
+    | '/creative'
+    | '/explore'
+    | '/projects'
+    | '/team'
+    | '/blogs/$slug'
+    | '/learn/$subject'
+    | '/blogs'
+    | '/learn'
+  id:
+    | '__root__'
+    | '/'
+    | '/about'
+    | '/chatbot'
+    | '/contact'
+    | '/creative'
+    | '/explore'
+    | '/projects'
+    | '/team'
+    | '/blogs/$slug'
+    | '/learn/$subject'
+    | '/blogs/'
+    | '/learn/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AboutRoute: typeof AboutRoute
+  ChatbotRoute: typeof ChatbotRoute
+  ContactRoute: typeof ContactRoute
+  CreativeRoute: typeof CreativeRoute
+  ExploreRoute: typeof ExploreRoute
+  ProjectsRoute: typeof ProjectsRoute
+  TeamRoute: typeof TeamRoute
+  BlogsSlugRoute: typeof BlogsSlugRoute
+  LearnSubjectRoute: typeof LearnSubjectRoute
+  BlogsIndexRoute: typeof BlogsIndexRoute
+  LearnIndexRoute: typeof LearnIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +195,99 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/about': {
+      id: '/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/chatbot': {
+      id: '/chatbot'
+      path: '/chatbot'
+      fullPath: '/chatbot'
+      preLoaderRoute: typeof ChatbotRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/creative': {
+      id: '/creative'
+      path: '/creative'
+      fullPath: '/creative'
+      preLoaderRoute: typeof CreativeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/explore': {
+      id: '/explore'
+      path: '/explore'
+      fullPath: '/explore'
+      preLoaderRoute: typeof ExploreRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/projects': {
+      id: '/projects'
+      path: '/projects'
+      fullPath: '/projects'
+      preLoaderRoute: typeof ProjectsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/team': {
+      id: '/team'
+      path: '/team'
+      fullPath: '/team'
+      preLoaderRoute: typeof TeamRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/blogs/': {
+      id: '/blogs/'
+      path: '/blogs'
+      fullPath: '/blogs/'
+      preLoaderRoute: typeof BlogsIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/blogs/$slug': {
+      id: '/blogs/$slug'
+      path: '/blogs/$slug'
+      fullPath: '/blogs/$slug'
+      preLoaderRoute: typeof BlogsSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/learn/': {
+      id: '/learn/'
+      path: '/learn'
+      fullPath: '/learn/'
+      preLoaderRoute: typeof LearnIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/learn/$subject': {
+      id: '/learn/$subject'
+      path: '/learn/$subject'
+      fullPath: '/learn/$subject'
+      preLoaderRoute: typeof LearnSubjectRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AboutRoute: AboutRoute,
+  ChatbotRoute: ChatbotRoute,
+  ContactRoute: ContactRoute,
+  CreativeRoute: CreativeRoute,
+  ExploreRoute: ExploreRoute,
+  ProjectsRoute: ProjectsRoute,
+  TeamRoute: TeamRoute,
+  BlogsSlugRoute: BlogsSlugRoute,
+  LearnSubjectRoute: LearnSubjectRoute,
+  BlogsIndexRoute: BlogsIndexRoute,
+  LearnIndexRoute: LearnIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
